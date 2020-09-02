@@ -1,19 +1,21 @@
-var VideoList = () => (
+import VideoListEntry from './VideoListEntry.js';
+
+// console.log(exampleVideoData);
+
+var VideoList = (props) => (
+  // console.log('props inside of video list: ', props.videos);
+
   <div className="video-list">
-    <div><h5><em>videoListEntry</em> view goes here</h5></div>
-    <div><h5><em>videoListEntry</em> view goes here</h5></div>
-    <div><h5><em>videoListEntry</em> view goes here</h5></div>
-    <div><h5><em>videoListEntry</em> view goes here</h5></div>
-    <div><h5><em>videoListEntry</em> view goes here</h5></div>
+    {props.videos.map(video => <VideoListEntry video = {video} changeMainVideo = {props.changeMainVideo}/>)}
   </div>
 );
 
-// PropTypes tell other developers what `props` a component expects
-// Warnings will be shown in the console when the defined rules are violated
-VideoList.propTypes = {
-  videos: PropTypes.array.isRequired
-};
 
-// In the ES6 spec, files are "modules" and do not share a top-level scope.
-// `var` declarations will only exist globally where explicitly defined.
+// // In the ES6 spec, files are "modules" and do not share a top-level scope.
+// // `var` declarations will only exist globally where explicitly defined.
 export default VideoList;
+
+
+
+// if (Array.isArray(props.videoData))
+

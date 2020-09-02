@@ -14,12 +14,12 @@ describe ('VideoPlayer', function() {
   // Read more here: https://github.com/facebook/react/issues/4972
 
   beforeEach(function() {
+
     cuteCatVideo = renderIntoDocument(
       <Wrapper>
         <VideoPlayer video={window.fakeVideoData[0]} />
       </Wrapper>
     );
-
     superCuteCatVideo = renderIntoDocument(
       <Wrapper>
         <VideoPlayer video={window.fakeVideoData[1]} />
